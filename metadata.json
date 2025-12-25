@@ -1,0 +1,7 @@
+{
+  "name": "ConstruPlan Pro - Nextjs",
+  "description": "Enterprise construction workforce and resource planning system with a desktop admin grid and mobile-first employee assignment views.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
