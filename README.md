@@ -1,20 +1,37 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# SiteSync: Construction Resource Scheduler
 
-# Run and deploy your AI Studio app
+A high-performance, grid-based scheduling application designed for construction management. SiteSync allows dispatchers to manage employee assignments, vehicle logistics, and site priorities through an interactive daily matrix.
 
-This contains everything you need to run your app locally.
+## 📋 Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1fY7uj56eC8pRsTXlT7DWRiW8pGjoy_Rh
+### 🏗️ Interactive Scheduling Grid
+* **Dual-Axis Management:** Y-axis displays Construction Sites; X-axis displays Employees.
+* **Click-to-Assign:** Toggle employee assignments via interactive cell clicks.
+* **Hover Clarity:** Dynamic row and column highlighting for error-free navigation in large grids.
+* **Persistent Drafting:** Today’s schedule automatically clones to tomorrow's draft.
+* **Staged Saves:** Changes are only published to the live database after clicking the **Save** button.
 
-## Run Locally
+### 🚦 Intelligent Business Rules
+* **Vacation Sync (Blue):** Automatically pulls data from the Vacation Planner. Employees on leave are locked and cannot be scheduled.
+* **Status Color Coding:**
+    * 🟩 **Green:** Scheduled employees.
+    * 🟥 **Red:** Unscheduled/Empty construction sites.
+* **Conflict Alerts:** Real-time warnings for double-scheduling employees or assigning the same vehicle to multiple sites.
 
-**Prerequisites:**  Node.js
+### 🔧 Site & Logistics Management
+* **Priority Engine:** Sites are sorted by priority (high to low). Sites marked `Priority 0` are automatically archived from the grid.
+* **Logistics:** * "Come to warehouse" (Yes/No) checkbox per site.
+    * Multi-vehicle assignment via dropdown menus.
+* **Communication:** Support for daily site-specific comments that merge with permanent site instructions for field staff.
 
+## 🛠️ Tech Stack (Suggested)
+* **Frontend:** React/Next.js or Vue.js
+* **Backend:** Node.js / PostgreSQL
+* **State Management:** TanStack Query (React Query) for handling staged "Save" states.
+* **Styling:** Tailwind CSS
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🚀 Getting Started
+
+### Prerequisites
+* Node.js (v18+)
+* PostgreSQL (v14+)
